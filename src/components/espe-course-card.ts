@@ -151,13 +151,20 @@ export class EspeCourseCard extends LitElement {
   }
 `;
 
-
+  @property({ type: String, reflect: true }) tema?: 'claro' | 'oscuro';
   @property({ type: String }) title = 'Programación';
   @property({ type: String }) description = 'Diseño e implementación de algoritmos';
   @property({ type: Number }) progress = 40;
   @property({ type: String }) progressColor: 'red' | 'green' = 'red';
+<<<<<<< HEAD
   @property({ type: String }) buttonTheme: 'green' | 'yellow' = 'green';
   @property({ type: String, reflect: true }) tema?: 'claro' | 'oscuro';
+=======
+  @property({ type: String }) buttonTheme: 'green' | 'yellow' = 'green';
+  @property({ type: String }) imageUrl = '';
+
+
+>>>>>>> 12deb43 (commit para componente ejemplo)
 
 
   render() {
