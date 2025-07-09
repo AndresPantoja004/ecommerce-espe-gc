@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>ESPE-commerce</title>
-    <script type="module" src="src/components/espe-search-input.ts"></script>
-    <script type="module" src="src/components/espe-course-card.ts"></script>
+    <script type="module" src="src/components/espe-footer.ts"></script>
     <style>
       * {
         box-sizing: border-box;
@@ -14,171 +13,19 @@
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #414141;
-        display: flex;
-        justify-content: center;
-      }
-
-      .container {
-        max-width: 1100px;
-        width: 90%;
-        border: solid 3px black;
-        padding: 40px 20px;
-        border-radius: 20px;
-        box-shadow: 10px 5px 10px 5px rgb(69, 69, 69);
-        background-color: rgb(48, 48, 48);
-        margin: 2rem auto;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: aliceblue;
-      }
-
-      .search-bar {
-        max-width: 600px;
-        margin: auto;
-        margin-bottom: 2rem;
-        width: 100%;
-      }
-
-      .container-courses {
-        display: flex;
-        justify-content: center;
-      }
-
-      section#asignaturas {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        width: 100%;
-      }
-
-      espe-course-card {
-        width: 100%;
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          padding: 20px 10px;
-          
-          place-content: center;
-          place-items: center;
-        }
-
-        h1 {
-          font-size: 1.4rem;
-        }
-
-        .search-bar {
-          width: 50%;
-        }
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <h1>BUSQUEDA ASIGNATURA</h1>
+    <espe-footer
+      logoSrc="./src/assets/E-ESPE.png"
+      addresses='["Av. Quevedo Km. 24 - Parroquia Luz de America","Sede Matriz Sangolqui","Sede Latacunga","Santo Domingo - Ecuador"]'
+      contacts='["Telefono: +593 2 123 4567","Email: contacto@espe.edu.ec"]'
+      paymentLogos='["./src/assets/visa.png","./src/assets/mastercard.png","./src/assets/paypal.png","./src/assets/american.png"]'
+    >
+    </espe-footer>
+    
 
-      <div class="search-bar">
-        <espe-search-input
-          theme="#986665"
-          placeholder="Busca la asignatura"
-        ></espe-search-input>
-      </div>
-
-      <div class="container-courses">
-        <section id="asignaturas">
-          <espe-course-card
-            data-nombre="Investigación"
-            title="Investigación"
-            description="📘 Métodos científicos aplicados"
-            imageUrl="https://www.questionpro.com/blog/wp-content/uploads/2016/07/34-tres-metos-de-investigacion-de-mercado-2.jpg"
-            progress="60"
-            buttonTheme="yellow"
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Ingeniería"
-            title="Ingeniería"
-            description="📗 Fundamentos de ingeniería general"
-            imageUrl="https://th.bing.com/th/id/R.4dc517ba3033ca729ca61171c33ab62d?rik=vDyfygqReNwfiw&riu=http%3a%2f%2fportal.ucm.cl%2fcontent%2fuploads%2f2021%2f09%2fingenierias-UCM-1.jpg&ehk=R8DkPDrrkYGveh7SY8J0rytMVP8a8VfEFBkTQh%2fl7CQ%3d&risl=&pid=ImgRaw&r=0"
-            progress="70"
-            buttonTheme="yellow"            
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Administración"
-            title="Administración"
-            description="📙 Gestión y liderazgo organizacional"
-            imageUrl="https://iespereda.es/wp-content/uploads/2023/12/asignaturas-de-administracion-y-finanzas-en-fp.jpg"
-            progress="40"
-            buttonTheme="green"
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Computación"
-            title="Computación"
-            description="💻 Fundamentos y algoritmos"
-            imageUrl="https://www.lifeder.com/wp-content/uploads/2021/12/computacion.jpg"
-            progress="50"
-            buttonTheme="yellow"
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Biotecnología"
-            title="Biotecnología"
-            description="🧬 Procesos biológicos avanzados"
-            imageUrl="https://thefoodtech.com/wp-content/uploads/2023/09/biotecnologia.jpg"
-            progress="30"
-            buttonTheme="green"
-          ></espe-course-card>
-        </section>
-      </div>
-    </div>
-
-    <script>
-      const search = document.querySelector("espe-search-input");
-      const cards = document.querySelectorAll("espe-course-card");
-
-      const asignaturas = [
-        "Investigación",
-        "Ingeniería",
-        "Administración",
-        "Computación",
-        "Biotecnología",
-      ];
-      search.suggestions = asignaturas;
-
-      function filtrar(valor) {
-        valor = valor.toLowerCase();
-        cards.forEach((card) => {
-          const nombre = card.dataset.nombre.toLowerCase();
-          card.style.display = nombre.includes(valor) ? "block" : "none";
-        });
-        if (!valor) {
-          cards.forEach((card) => (card.style.display = "block"));
-        }
-      }
-
-      search.addEventListener("sugerencia-seleccionada", (e) => {
-        filtrar(e.detail.value);
-      });
-
-      search.addEventListener("input", (e) => {
-        filtrar(e.target.value);
-      });
-
-      search.addEventListener("buscar-enter", (e) => {
-        search.loading = true;
-        filtrar(e.detail.value);
-        setTimeout(() => {
-          search.loading = false;
-        }, 1000);
-      });
-    </script>
   </body>
 </html>
