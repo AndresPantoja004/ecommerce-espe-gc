@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>ESPE-commerce</title>
-    <script type="module" src="src/components/espe-search-input.ts"></script>
-    <script type="module" src="src/components/espe-course-card.ts"></script>
+    <script type="module" src="src/components/espe-categorys.ts"></script>
     <style>
       * {
         box-sizing: border-box;
@@ -14,7 +13,6 @@
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #414141;
         display: flex;
         justify-content: center;
       }
@@ -59,126 +57,41 @@
       espe-course-card {
         width: 100%;
       }
-
-      @media (max-width: 768px) {
-        .container {
-          padding: 20px 10px;
-          
-          place-content: center;
-          place-items: center;
-        }
-
-        h1 {
-          font-size: 1.4rem;
-        }
-
-        .search-bar {
-          width: 50%;
-        }
-      }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <h1>BUSQUEDA ASIGNATURA</h1>
-
-      <div class="search-bar">
-        <espe-search-input
-          theme="#986665"
-          placeholder="Busca la asignatura"
-        ></espe-search-input>
-      </div>
-
-      <div class="container-courses">
-        <section id="asignaturas">
-          <espe-course-card
-            data-nombre="Investigación"
-            title="Investigación"
-            description="📘 Métodos científicos aplicados"
-            imageUrl="https://www.questionpro.com/blog/wp-content/uploads/2016/07/34-tres-metos-de-investigacion-de-mercado-2.jpg"
-            progress="60"
-            buttonTheme="yellow"
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Ingeniería"
-            title="Ingeniería"
-            description="📗 Fundamentos de ingeniería general"
-            imageUrl="https://th.bing.com/th/id/R.4dc517ba3033ca729ca61171c33ab62d?rik=vDyfygqReNwfiw&riu=http%3a%2f%2fportal.ucm.cl%2fcontent%2fuploads%2f2021%2f09%2fingenierias-UCM-1.jpg&ehk=R8DkPDrrkYGveh7SY8J0rytMVP8a8VfEFBkTQh%2fl7CQ%3d&risl=&pid=ImgRaw&r=0"
-            progress="70"
-            buttonTheme="yellow"            
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Administración"
-            title="Administración"
-            description="📙 Gestión y liderazgo organizacional"
-            imageUrl="https://iespereda.es/wp-content/uploads/2023/12/asignaturas-de-administracion-y-finanzas-en-fp.jpg"
-            progress="40"
-            buttonTheme="green"
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Computación"
-            title="Computación"
-            description="💻 Fundamentos y algoritmos"
-            imageUrl="https://www.lifeder.com/wp-content/uploads/2021/12/computacion.jpg"
-            progress="50"
-            buttonTheme="yellow"
-          ></espe-course-card>
-
-          <espe-course-card
-            data-nombre="Biotecnología"
-            title="Biotecnología"
-            description="🧬 Procesos biológicos avanzados"
-            imageUrl="https://thefoodtech.com/wp-content/uploads/2023/09/biotecnologia.jpg"
-            progress="30"
-            buttonTheme="green"
-          ></espe-course-card>
-        </section>
-      </div>
-    </div>
-
+    <espe-nav-category id="catMenu"></espe-nav-category>
     <script>
-      const search = document.querySelector("espe-search-input");
-      const cards = document.querySelectorAll("espe-course-card");
-
-      const asignaturas = [
-        "Investigación",
-        "Ingeniería",
-        "Administración",
-        "Computación",
-        "Biotecnología",
-      ];
-      search.suggestions = asignaturas;
-
-      function filtrar(valor) {
-        valor = valor.toLowerCase();
-        cards.forEach((card) => {
-          const nombre = card.dataset.nombre.toLowerCase();
-          card.style.display = nombre.includes(valor) ? "block" : "none";
-        });
-        if (!valor) {
-          cards.forEach((card) => (card.style.display = "block"));
-        }
+      const catMenu = document.getElementById("catMenu");
+      if (catMenu) {
+        catMenu.categories = [
+          {
+            label: "Tecnología",
+            link: "/categorias/tecnologia",
+            image: "https://aecconsultoras.com/wp-content/uploads/2020/01/td.jpg",
+            cantidad: 18
+          },
+          {
+            label: "Libros",
+            link: "/categorias/libros",
+            image: "https://resizer.glanacion.com/resizer/v2/credito-QS3KNYFVIFHPJLNBGX45PZCZSM.jpg?auth=50f38491ae3193337eeec020a127bcabf02e8cf5fade7ed15dd8923181e7d2a1&width=768&quality=70&smart=false",
+            cantidad: 12
+          },
+          {
+            label: "Arte",
+            link: "/categorias/arte",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl9eLq32gAga3JV7pcaWcZmpGgf5DovPw1Qg&s",
+            cantidad: 7
+          },
+          {
+            label: "Ropa",
+            link: "/categorias/ropa",
+            image: "https://wwflac.awsassets.panda.org/img/8886_1_736993.jpg",
+            cantidad: 25
+          },
+        ];
       }
-
-      search.addEventListener("sugerencia-seleccionada", (e) => {
-        filtrar(e.detail.value);
-      });
-
-      search.addEventListener("input", (e) => {
-        filtrar(e.target.value);
-      });
-
-      search.addEventListener("buscar-enter", (e) => {
-        search.loading = true;
-        filtrar(e.detail.value);
-        setTimeout(() => {
-          search.loading = false;
-        }, 1000);
-      });
     </script>
   </body>
 </html>
