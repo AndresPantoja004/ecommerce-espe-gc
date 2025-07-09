@@ -42,9 +42,10 @@ static styles = css`
 
   input {
     width: 100%;
-    padding: 10px 12px;
+    height: 30px;
+    padding: 10px;
     border: 2px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
     outline: none;
     background-color: var(--color-bg);
@@ -58,7 +59,7 @@ static styles = css`
 
   .icon {
     position: absolute;
-    right: 12px;
+    right: 1px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--color-border);
