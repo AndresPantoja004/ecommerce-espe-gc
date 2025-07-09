@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('espe-header-bar')
+@customElement('espe-header')
 export class EspeHeaderBar extends LitElement {
   static styles = css`
     :host {
@@ -135,7 +135,7 @@ export class EspeHeaderBar extends LitElement {
         <div class="search">
           <slot name="search"></slot>
         </div>
-        
+
         <div class="actions">
           <div class="buttons">
             <a class="login" href="${this.loginUrl}">Login</a>

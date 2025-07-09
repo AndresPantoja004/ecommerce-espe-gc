@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>ESPE Search</title>
+    <title>ESPE Header</title>
     <script type="module" src="src/components/espe-search-input.ts"></script>
     <script type="module" src="src/components/espe-header.ts"></script>
     <style>
@@ -59,14 +59,14 @@
     </style>
   </head>
   <body>
-    <espe-header-bar
+    <espe-header
       id="headerBar"
       logoSrc="https://srvcas.espe.edu.ec/authenticationendpoint/images/Logo-MiESPE.png"
       loginUrl="/login"
       signupUrl="/register"
     >
       <espe-search-input slot="search"></espe-search-input>
-    </espe-header-bar>
+    </espe-header>
 
     <script>
       const search = document.querySelector("espe-search-input");
