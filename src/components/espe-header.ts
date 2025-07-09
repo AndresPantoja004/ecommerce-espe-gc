@@ -11,8 +11,8 @@ export class EspeHeaderBar extends LitElement {
       color: var(--header-text, #000000);
       padding: 20px 60px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      --color-primary: #003c71;
-      --color-accent: #ffc107;
+      --color-primary: #006935;
+      --color-accent: #FFE700;
       --color-link: #000000;
       --color-divider: #000000;
     }
