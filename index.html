@@ -61,7 +61,11 @@
   </head>
 
   <body>
-    <espe-nav-category id="catMenu"></espe-nav-category>
+    <espe-nav-category id="catMenu"
+      overlayColor="rgba(20, 20, 20, 0.5)"
+      textColor="#C1C1C1"
+      labelBgColor="#000000aa"
+    ></espe-nav-category>
     <script>
       const catMenu = document.getElementById("catMenu");
       if (catMenu) {
@@ -89,6 +93,30 @@
             link: "/categorias/ropa",
             image: "https://wwflac.awsassets.panda.org/img/8886_1_736993.jpg",
             cantidad: 25
+          },
+          {
+            label: "Diversión",
+            link: "/categorias/juqguetes",
+            image: "https://www.wondykids.com/cdn/shop/articles/outlet_juguetes_2000x.jpg?v=1626023733",
+            cantidad: 15
+          },
+          {
+            label: "Mecanica",
+            link: "/categorias/mecanica",
+            image: "https://itsqmet.edu.ec/wp-content/uploads/2024/08/La-mecanica-automotriz-1024x635.webp",
+            cantidad: 250
+          },
+          {
+            label: "Hogar",
+            link: "/categorias/hogar",
+            image: "https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210405174111-amazon-home-under-100-lead-super-169.jpg?quality=100&strip=info&w=460&h=260&crop=1",
+            cantidad: 123
+          },
+          {
+            label: "Jardineria",
+            link: "/categorias/jardin",
+            image: "https://theressa.net/images/articles/5e42c6bd65ac9-image-asset.jpeg",
+            cantidad: 26
           },
         ];
       }
