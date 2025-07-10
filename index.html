@@ -2,22 +2,63 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ESPE-commerce</title>
+    <link rel="stylesheet" href="src/components/index.css" />
+    <script type="module" src="src/components/espe-header.ts"></script>
+    <script type="module" src="src/components/espe-login.ts"></script>
+    <script type="module" src="src/components/espe-search-input.ts"></script>
+    <script type="module" src="src/components/espe-product-card.ts"></script>
     <script type="module" src="src/components/espe-footer.ts"></script>
     <style>
-      * {
-        box-sizing: border-box;
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: rgb(239, 239, 239);
       }
 
-      body {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      #productos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem;
+        justify-items: center;
+        align-items: stretch;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
       }
     </style>
   </head>
-
   <body>
+    <espe-header
+      id="headerBar"
+      logoSrc="https://srvcas.espe.edu.ec/authenticationendpoint/images/Logo-MiESPE.png"
+      loginUrl="/login.html"
+      signupUrl="/register.html"
+    >
+      <espe-search-input slot="search" tema="claro"></espe-search-input>
+    </espe-header>
+
+    <main>
+
+      <!-- Productos -->
+      <section id="productos">
+
+      </section>
+    </main>
+
     <espe-footer
       logoSrc="./src/assets/E-ESPE.png"
       addresses='["Av. Quevedo Km. 24 - Parroquia Luz de America","Sede Matriz Sangolqui","Sede Latacunga","Santo Domingo - Ecuador"]'
@@ -25,5 +66,75 @@
       paymentLogos='["./src/assets/visa.png","./src/assets/mastercard.png","./src/assets/paypal.png","./src/assets/american.png"]'
     >
     </espe-footer>
+
+    <script>
+      const search = document.querySelector("espe-search-input");
+      const cards = document.querySelectorAll("espe-product-card");
+
+      // Set categories property on the header bar element
+      const headerBar = document.getElementById("headerBar");
+      if (headerBar) {
+        headerBar.categories = [
+          { label: 'Home', link: '/' },
+          { label: 'Categorías', link: '/categorias' },
+          { label: 'Materias', link: '/materias' },
+          { label: 'Secciones', link: '/secciones' }
+        ];
+      }
+      let valor = "";
+
+
+      if (!valor) {
+        cards.forEach((card) => (card.style.display = "block"));
+      }
+
+      search.addEventListener("sugerencia-seleccionada", (e) => {
+        filtrar(e.detail.value);
+      });
+
+      search.addEventListener("input", (e) => {
+        filtrar(e.target.value);
+      });
+
+      search.addEventListener("buscar-enter", (e) => {
+        search.loading = true;
+        filtrar(e.detail.value);
+        setTimeout(() => {
+          search.loading = false;
+        }, 1000);
+      });
+
+      fetch('products.json')
+      .then(res => res.json())
+      .then(productos => {
+      const contenedor = document.getElementById('productos');
+
+      productos.forEach(p => {
+        const card = document.createElement('espe-product-card');
+        card.title = p.title;
+        card.description = p.description;
+        card.price = p.price;
+        card.status = p.status;
+        card.buttonTheme = p.buttonTheme;
+        card.imageUrl = p.imageUrl;
+        contenedor.appendChild(card);
+      });
+    });
+
+    function filtrar(valor) {
+      const tarjetas = document.querySelectorAll('espe-product-card');
+      const valorLower = valor.toLowerCase();
+
+      tarjetas.forEach((tarjeta) => {
+        const titulo = tarjeta.title.toLowerCase();
+        const descripcion = tarjeta.description?.toLowerCase() || '';
+        
+        const coincide = titulo.includes(valorLower) || descripcion.includes(valorLower);
+        tarjeta.style.display = coincide ? 'block' : 'none';
+      });
+    }
+
+
+    </script>
   </body>
 </html>

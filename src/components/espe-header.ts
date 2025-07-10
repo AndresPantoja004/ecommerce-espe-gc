@@ -109,8 +109,11 @@ export class EspeHeaderBar extends LitElement {
       }
 
       .search {
-        max-width: 100%;
+        max-width: 50%;
+        width: 100px;
       }
+
+
     }
   `;
 

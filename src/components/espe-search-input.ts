@@ -41,7 +41,7 @@ static styles = css`
   }
 
   input {
-    width: 100%;
+    width: 70%;
     height: 20px;
     padding: 10px 40px;
     border: 2px solid var(--color-border);
@@ -63,6 +63,7 @@ static styles = css`
     top: 55%;
     transform: translateY(-50%);
     color: var(--color-border);
+    
   }
 
   ul.suggestions {

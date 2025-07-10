@@ -1,110 +1,67 @@
-# 📚 Componente Web: `<espe-footer>`
+# 🛍️ ESPE-commerce
 
-Componente que permite personalizar el footer, tiene ingreso de un logo, colores, direcciones (varias no hay limites solo den estar separadas con ,) contactos e igual no tiene limintes solo deben estar separadas con ,
+ESPE-commerce es una aplicación web orientada a mostrar productos en línea y permitir la autenticación de usuarios. Está construida utilizando Web Components personalizados desarrollados con LitElement.
 
-# `<espe-footer>`
-
-Componente web reutilizable desarrollado con [LitElement](https://lit.dev/) que representa el pie de página institucional para aplicaciones web. Diseñado para ser flexible, accesible y visualmente coherente con la identidad de la Universidad de las Fuerzas Armadas – ESPE, este footer permite mostrar información de contacto, direcciones, logotipos de pago y más.
-
----
-
-## Propósito
-
-`<espe-footer>` proporciona una solución modular para el cierre visual y funcional de cualquier aplicación web. Su diseño está orientado a:
-
-- Reforzar la identidad institucional.
-- Mostrar información útil como contactos y ubicaciones.
-- Integrar logotipos de métodos de pago u otros íconos relevantes.
-- Adaptarse a distintos tamaños de pantalla con diseño responsivo.
-
----
-
-## Características principales
-
-- ✅ Logotipo institucional configurable.
-- ✅ Listas dinámicas de direcciones y contactos.
-- ✅ Soporte para mostrar íconos de métodos de pago.
-- ✅ Estilos personalizables mediante variables CSS.
-- ✅ Diseño responsivo y mobile-first.
-- ✅ Encapsulamiento completo con Shadow DOM.
-
----
-
-## Instalación
-
-Importa el componente en tu proyecto:
-
-```ts
-import './src/components/espe-footer.ts';
+## 📦 Estructura del Proyecto
+```
+src/
+├── components/
+│ ├── espe-header.ts
+│ ├── espe-footer.ts
+│ ├── espe-login.ts
+│ ├── espe-product-card.ts
+│ ├── espe-search-input.ts
+│ ├── index.css
+├── assets/
+│ ├── imágenes de productos (.png, .jpg)
+│ ├── logos de pago (visa.png, paypal.png, etc.)
+├── products.json
+├── indexFull.html
+├── login.html
 ```
 
----
+## ⚙️ Componentes Personalizados
 
-# Uso básico
-```html
-<espe-footer
-  logoSrc="./src/assets/E-ESPE.png"
-  addresses='["Av. Quevedo Km. 24 - Parroquia Luz de America","Sede Matriz Sangolqui","Sede Latacunga","Santo Domingo - Ecuador"]'
-  contacts='["Telefono: +593 2 123 4567","Email: contacto@espe.edu.ec"]'
-  paymentLogos='["./src/assets/visa.png","./src/assets/mastercard.png","./src/assets/paypal.png","./src/assets/american.png"]'
-></espe-footer>
-```
+### 🧩 `espe-header`
+Encabezado principal del sitio. Contiene logo, navegación y buscador incrustado por medio de un `<slot>`.
 
-⚠️ Nota: Las propiedades addresses, contacts y paymentLogos deben pasarse como strings JSON válidos si se usan directamente en HTML. Si se usan desde JavaScript, pueden pasarse como arrays normales.
+### 🔐 `espe-login-card`
+Componente de autenticación que permite iniciar sesión. Emiten eventos personalizados (`login-submit`) para manejar credenciales.
 
+### 🔍 `espe-search-input`
+Barra de búsqueda que ofrece sugerencias. Emite los eventos `sugerencia-seleccionada` y `buscar-enter` para interactuar con los productos.
 
-# API del componente
-Propiedades
+### 📦 `espe-product-card`
+Tarjetas reutilizables que muestran información de productos. Se cargan dinámicamente desde un archivo JSON y se filtran mediante el buscador.
 
-| Propiedad    | Tipo     | Descripción                                           | Por defecto | 
-|--------------|----------|-------------------------------------------------------|-------------|
-| logoSrc      | string   | URL del logotipo institucional.                       | ' '          | 
-| addresses    | string[] | Lista de direcciones físicas de las tiendas o sedes.  | [ ]          | 
-| contacts     | string[] | Lista de medios de contacto (teléfono, correo, etc.). | [ ]          | 
-| paymentLogos | string[] | Lista de URLs de logotipos de métodos de pago.        | [ ]          | 
+### 🧱 `espe-footer`
+Pie de página del sitio, mostrando logos, contactos y direcciones institucionales.
 
----
+## 🔄 Funcionamiento
 
-# Personalización con CSS
+- Los productos se cargan desde `products.json` al iniciar la app.
+- El buscador permite filtrar las tarjetas según coincidencia en el título o descripción.
+- El login redirige al usuario a `indexFull.html` si las credenciales son válidas.
+- Si no hay coincidencias de búsqueda, se muestra un mensaje de “No se encontraron productos”.
 
-Puedes modificar el estilo del footer usando variables CSS:
+## 🌐 Enlaces de Navegación
 
-```css
-espe-footer {
-  --footer-bg: #003C71;
-  --footer-text: #FFFFFF;
-  --footer-title: #FFD700;
-  --footer-link: #FFD700;
-  --footer-link-hover: #ffffff;
-  --footer-divider: rgba(255, 255, 255, 0.3);
-  --footer-signature: #FFD700;
-  --footer-logo-filter: brightness(1.2);
-  --footer-payment-filter: grayscale(0);
-  --footer-font: 'Arial', 'Roboto', sans-serif;
-}
-```
----
+- `login.html`: página inicial de autenticación
+- `indexFull.html`: vista principal de productos y navegación
 
-# Diseño responsivo
-- El layout se adapta automáticamente a pantallas pequeñas (max-width: 768px).
-- Las columnas se apilan verticalmente para mejorar la legibilidad en dispositivos móviles.
-- Los íconos de pago y el texto se reorganizan para mantener la coherencia visual.
+## 🛠️ Tecnologías Usadas
+
+- LitElement (Web Components)
+- HTML, CSS
+- JavaScript / ES Modules
+- JSON para datos simulados
 
 ---
 
-# Visualizacion del componente
-Figura 1. Vista del Pie de Página Institucional con Información de Contacto y Métodos de Pago
+## 🖼️ Vista completa del proyecto
 
-![ESPE-commerce](docs/espefooter.png) 
-Nota: Elaboración propia (2025). El pie de página muestra el logotipo institucional, direcciones de sedes, medios de contacto y logotipos de métodos de pago como Visa, Mastercard, PayPal y American Express.
+![Vista del proyecto](docs/view-complete.png)
 
-# Licencia
-Este componente ha sido desarrollado con fines académicos y puede ser adaptado o extendido libremente para proyectos personales o institucionales.
+💡 Si vas a expandir el proyecto con una API en Spring Boot, podrías incluir la lógica de autenticación con JWT y un endpoint para los productos para que se carguen desde el backend dinámicamente.
 
-
-
-
-
-
-
-
+¿Quieres que te ayude a escribir una versión en inglés o agregar instrucciones para contribuir desde Git? También puedo ayudarte a estructurar tu rama en GitHub con convenciones de nombres y versionado.

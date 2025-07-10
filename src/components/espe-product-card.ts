@@ -40,7 +40,7 @@ export class EspeProductCard extends LitElement {
       background-color: var(--card-bg);
       color: var(--text-color);
       border-radius: 16px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 4px rgba(0,0,0,0.1);
       overflow: hidden;
       width: 280px;
     }

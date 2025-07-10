@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESPE-commerce</title>
+    <script type="module" src="src/components/espe-login.ts"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        display: flex;
+        place-content: center;
+        place-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #mensaje-error{
+        background-color: rgb(214, 67, 67);
+        padding: 8px;
+        border: none;
+        border-radius: 17px;
+        color: white;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <espe-login-card></espe-login-card>
+      <div id="mensaje-error" ></div>
+    </div>
+    <script>
+      const loginEl = document.querySelector('espe-login-card');
+      const errorDiv = document.getElementById('mensaje-error');
+
+      loginEl.addEventListener('login-submit', async (e) => {
+        const { email, password } = e.detail;
+
+        // Validación de credenciales (simulación)
+        if (email === 'davidpanto1234@gmail.com' && password === 'Davicho2004') {
+          window.location.href = 'indexFull.html';
+        } else {
+          errorDiv.textContent = '⚠️ Las credenciales ingresadas son incorrectas.';
+          errorDiv.style.display="flex"
+        }
+      });
+    </script>
+  </body>
+</html>
