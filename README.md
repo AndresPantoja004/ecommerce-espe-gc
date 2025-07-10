@@ -159,7 +159,7 @@ header.categories = [
 
 Figura 1. Vista del Encabezado Institucional con Navegación y Búsqueda
 
-![Filtrado por fecha](docs/espeheader.png) 
+![Espe Header](docs/espeheader.png) 
 Nota: Elaboración propia (2025). El encabezado muestra el logotipo institucional "miESPE", enlaces de navegación como "Home", "Categorías", "Materias" y "Secciones", una barra de búsqueda con el texto "Buscar..." y botones de acción para "Login" y "Sign up". Esta estructura permite una navegación clara y accesible dentro del portal.
 
 ---
