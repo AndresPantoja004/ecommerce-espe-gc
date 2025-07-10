@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /node_modules
 =======
 # Logs
@@ -24,4 +24,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
->>>>>>> e2581b2 (estructura de proyecto)
