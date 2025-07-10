@@ -78,10 +78,3 @@ handleSubmit() → Captura inputs y emite evento login-submit.
 ## 🔒 Licencia
 MIT © 2025 — Desarrollado por Andrés Pantoja.
 
-
----
-
-### 📥 ¿Cómo descargarlo?
-
-Puedes copiar este contenido en un archivo llamado `README.md` dentro de tu carpeta del componente, o si prefieres que te lo entregue directamente en un archivo listo, dime y te lo genero como descarga (.md).
-
