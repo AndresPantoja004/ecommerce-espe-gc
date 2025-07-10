@@ -1,11 +1,6 @@
 
-# ecommerce-espe-gc
-=======
-## 🛒 espe-product-card
-Componente Web reutilizable desarrollado con Lit para representar productos de un catálogo de e-commerce, diseñado con los estilos de la Universidad ESPE.
-=======
+
 # 🧩 Componente Web: `<espe-login>`
->>>>>>> 5e60921 (realizado componente login)
 
 Este componente Web desarrollado con [Lit](https://lit.dev/) representa una tarjeta de **inicio de sesión (Login)** para aplicaciones de tipo e-commerce o sistemas administrativos. 
 
