@@ -98,7 +98,7 @@ espe-nav-category {
 
 ---
 
-# Ejemplo visual
+# Visualizacion del componente 
 Figura 4. Vista del Menú de Categorías con Imágenes y Cantidad de Productos
 
 ![Captura uso de componente - categoria](docs/especategoria.png)
