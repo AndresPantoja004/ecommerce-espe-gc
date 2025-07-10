@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+<<<<<<< HEAD
     <title>ESPE components</title>
     <script type="module" src="/src/components/espe-login.ts"></script>
   <style>
@@ -32,3 +33,85 @@
 </body>
 </html>
 
+=======
+    <title>ESPE-commerce</title>
+    <script type="module" src="src/components/espe-categorys.ts"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <espe-nav-category id="catMenu"
+      overlayColor="rgba(20, 20, 20, 0.5)"
+      textColor="#C1C1C1"
+      labelBgColor="#000000aa"
+    ></espe-nav-category>
+    <script>
+      const catMenu = document.getElementById("catMenu");
+      if (catMenu) {
+        catMenu.categories = [
+          {
+            label: "Tecnología",
+            link: "/categorias/tecnologia",
+            image: "https://aecconsultoras.com/wp-content/uploads/2020/01/td.jpg",
+            cantidad: 18
+          },
+          {
+            label: "Libros",
+            link: "/categorias/libros",
+            image: "https://resizer.glanacion.com/resizer/v2/credito-QS3KNYFVIFHPJLNBGX45PZCZSM.jpg?auth=50f38491ae3193337eeec020a127bcabf02e8cf5fade7ed15dd8923181e7d2a1&width=768&quality=70&smart=false",
+            cantidad: 12
+          },
+          {
+            label: "Arte",
+            link: "/categorias/arte",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl9eLq32gAga3JV7pcaWcZmpGgf5DovPw1Qg&s",
+            cantidad: 7
+          },
+          {
+            label: "Ropa",
+            link: "/categorias/ropa",
+            image: "https://wwflac.awsassets.panda.org/img/8886_1_736993.jpg",
+            cantidad: 25
+          },
+          {
+            label: "Diversión",
+            link: "/categorias/juqguetes",
+            image: "https://www.wondykids.com/cdn/shop/articles/outlet_juguetes_2000x.jpg?v=1626023733",
+            cantidad: 15
+          },
+          {
+            label: "Mecanica",
+            link: "/categorias/mecanica",
+            image: "https://itsqmet.edu.ec/wp-content/uploads/2024/08/La-mecanica-automotriz-1024x635.webp",
+            cantidad: 250
+          },
+          {
+            label: "Hogar",
+            link: "/categorias/hogar",
+            image: "https://cnnespanol.cnn.com/wp-content/uploads/2021/04/210405174111-amazon-home-under-100-lead-super-169.jpg?quality=100&strip=info&w=460&h=260&crop=1",
+            cantidad: 123
+          },
+          {
+            label: "Jardineria",
+            link: "/categorias/jardin",
+            image: "https://theressa.net/images/articles/5e42c6bd65ac9-image-asset.jpeg",
+            cantidad: 26
+          },
+        ];
+      }
+    </script>
+  </body>
+</html>
+>>>>>>> 2bddc7a40685a907a810875e55dadf4d6860293c
