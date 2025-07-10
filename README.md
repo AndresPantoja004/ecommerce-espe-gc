@@ -92,7 +92,7 @@ espe-footer {
 
 ---
 
-# Ejemplo visual
+# Visualizacion del componente
 Figura 1. Vista del Pie de Página Institucional con Información de Contacto y Métodos de Pago
 
 ![ESPE-commerce](docs/espefooter.png) 
