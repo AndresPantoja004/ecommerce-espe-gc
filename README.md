@@ -74,4 +74,3 @@ El componente detecta automáticamente el tema del sistema operativo mediante pr
 ```
 
 #### Autor: Andrés Pantoja
->>>>>>> 8d10c44 (creacion del componente y MD)
