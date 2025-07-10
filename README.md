@@ -62,6 +62,3 @@ Pie de página del sitio, mostrando logos, contactos y direcciones institucional
 
 ![Vista del proyecto](docs/view-complete.png)
 
-💡 Si vas a expandir el proyecto con una API en Spring Boot, podrías incluir la lógica de autenticación con JWT y un endpoint para los productos para que se carguen desde el backend dinámicamente.
-
-¿Quieres que te ayude a escribir una versión en inglés o agregar instrucciones para contribuir desde Git? También puedo ayudarte a estructurar tu rama en GitHub con convenciones de nombres y versionado.
