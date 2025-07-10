@@ -69,5 +69,3 @@ El componente detecta automáticamente el tema del sistema operativo mediante pr
   }
 </style>
 ```
-
-#### Autor: Andrés Pantoja :D
