@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 # ecommerce-espe-gc
 =======
 ## 🛒 espe-product-card
@@ -91,28 +90,3 @@ MIT © 2025 — Desarrollado por Andrés Pantoja.
 
 Puedes copiar este contenido en un archivo llamado `README.md` dentro de tu carpeta del componente, o si prefieres que te lo entregue directamente en un archivo listo, dime y te lo genero como descarga (.md).
 
-<<<<<<< HEAD
-- Estilos limpios, responsivos y visualmente consistentes
-
-## 📁 Ejemplo en cuadrícula
-
-```html
-<div class="grid">
-  <espe-product-card ...></espe-product-card>
-  <espe-product-card ...></espe-product-card>
-  <espe-product-card ...></espe-product-card>
-</div>
-
-<style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-</style>
-```
-
-#### Autor: Andrés Pantoja
-=======
-¿Deseas que también lo subamos automáticamente con un commit si estás en Git?
->>>>>>> 5e60921 (realizado componente login)
