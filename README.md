@@ -58,10 +58,10 @@ Propiedades
 
 | Propiedad    | Tipo     | Descripción                                           | Por defecto | 
 |--------------|----------|-------------------------------------------------------|-------------|
-| logoSrc      | string   | URL del logotipo institucional.                       | ''          | 
-| addresses    | string[] | Lista de direcciones físicas de las tiendas o sedes.  | []          | 
-| contacts     | string[] | Lista de medios de contacto (teléfono, correo, etc.). | []          | 
-| paymentLogos | string[] | Lista de URLs de logotipos de métodos de pago.        | []          | 
+| logoSrc      | string   | URL del logotipo institucional.                       | ' '          | 
+| addresses    | string[] | Lista de direcciones físicas de las tiendas o sedes.  | [ ]          | 
+| contacts     | string[] | Lista de medios de contacto (teléfono, correo, etc.). | [ ]          | 
+| paymentLogos | string[] | Lista de URLs de logotipos de métodos de pago.        | [ ]          | 
 
 ---
 
@@ -95,7 +95,7 @@ espe-footer {
 # Ejemplo visual
 Figura 1. Vista del Pie de Página Institucional con Información de Contacto y Métodos de Pago
 
-![Filtrado por fecha](img/FiltradoFecha.png) 
+![ESPE-commerce](docs/espefooter.png) 
 Nota: Elaboración propia (2025). El pie de página muestra el logotipo institucional, direcciones de sedes, medios de contacto y logotipos de métodos de pago como Visa, Mastercard, PayPal y American Express.
 
 # Licencia
