@@ -155,7 +155,7 @@ header.categories = [
 ];
 ```
 
-# Ejemplo visual
+# Visualizacion del componente
 
 Figura 1. Vista del Encabezado Institucional con Navegación y Búsqueda
 
