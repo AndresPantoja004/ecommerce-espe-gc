@@ -10,6 +10,7 @@
     <title>Catálogo de Productos</title>
 =======
     <title>Catálogo de Productoss</title>
+<<<<<<< HEAD
 >>>>>>> 550fed8 (cambios en index html)
     <script type="module" src="/src/components/espe-product-card.ts"></script>
 
@@ -140,3 +141,33 @@
     </div>
   </body>
 </html>
+=======
+    <script type="module" src="/src/components/espe-login.ts"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #dddddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <espe-login-card ></espe-login-card>
+  <script>
+    const loginCard = document.querySelector('espe-login-card');
+
+    loginCard.addEventListener('login-submit', (event) => {
+      const { email, password } = event.detail;
+      console.log('Login recibido:', email, password);
+      // Despues podemos validar aqui en el backend :D
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 5e60921 (realizado componente login)
