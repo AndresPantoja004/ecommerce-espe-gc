@@ -2,38 +2,6 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-<<<<<<< HEAD
-    <title>ESPE components</title>
-    <script type="module" src="/src/components/espe-login.ts"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #dddddd;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Arial', sans-serif;
-    }
-  </style>
-</head>
-<body>
-
-  <espe-login-card ></espe-login-card>
-  <script>
-    const loginCard = document.querySelector('espe-login-card');
-
-    loginCard.addEventListener('login-submit', (event) => {
-      const { email, password } = event.detail;
-      console.log('Login recibido:', email, password);
-      // Despues podemos validar aqui en el backend :D
-    });
-  </script>
-</body>
-</html>
-
-=======
     <title>ESPE Header</title>
     <script type="module" src="src/components/espe-search-input.ts"></script>
     <script type="module" src="src/components/espe-header.ts"></script>
@@ -50,10 +18,10 @@
       }
 
       .search-bar {
-        max-width: 600px;
+        max-width: 300px;
         margin: auto;
         margin-bottom: 2rem;
-        width: 100%;
+        width: 90%;
       }
     </style>
   </head>
@@ -104,4 +72,3 @@
     </script>
   </body>
 </html>
->>>>>>> 431061cf4202a2379fb5efcaa490c43ce4c3883f
