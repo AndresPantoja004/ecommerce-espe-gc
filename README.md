@@ -45,6 +45,57 @@ import './src/components/espe-header.ts';
 </espe-header>
 ```
 
+# Funcionamiento del  `<espe-header>`
+
+El componente <espe-header> actúa como una barra de navegación modular y adaptable, mientras que <espe-search-input> se acopla perfectamente en su interior como un buscador interactivo. Juntos, forman una cabecera institucional moderna, responsiva y funcional, ideal para portales académicos o administrativos.
+
+- El header recibe dinámicamente las categorías de navegación y muestra botones de acción.
+- El buscador ofrece sugerencias en tiempo real y dispara eventos personalizados para filtrar contenido.
+- Todo está encapsulado con LitElement, lo que garantiza rendimiento, reutilización y estilo aislado.
+
+---
+
+# Fragmentos claves del codigo 
+
+## Inyección dinámica de categorías
+
+```js
+const header = document.getElementById("headerBar");
+header.categories = [
+  { label: 'Home', link: '/' },
+  { label: 'Categorías', link: '/categorias' },
+  { label: 'Materias', link: '/materias' },
+  { label: 'Secciones', link: '/secciones' }
+];
+```
+
+## Captura de eventos del buscador
+
+```js
+search.addEventListener("sugerencia-seleccionada", (e) => {
+  filtrar(e.detail.value);
+});
+
+search.addEventListener("buscar-enter", (e) => {
+  search.loading = true;
+  filtrar(e.detail.value);
+  setTimeout(() => (search.loading = false), 1000);
+});
+```
+
+---
+
+# Integración con `<espe-search-input>`
+
+El componente <espe-search-input> se integra perfectamente en el slot search del header. Permite búsquedas con sugerencias, soporte para temas claro/oscuro y eventos personalizados.
+
+## Eventos emitidos por <espe-search-input>
+
+| Evento                  | Descripción                                                             | 
+|-------------------------|-------------------------------------------------------------------------|
+| sugerencia-seleccionada | Se dispara al hacer clic en una sugerencia. Devuelve { value: string }. | 
+| buscar-enter            | Se dispara al presionar Enter. Devuelve { value: string }.              | 
+
 ---
 
 ## Propiedades
@@ -108,7 +159,7 @@ header.categories = [
 
 Figura 1. Vista del Encabezado Institucional con Navegación y Búsqueda
 
-![Filtrado por fecha](img/FiltradoFecha.png) 
+![Filtrado por fecha](docs/espeheader.png) 
 Nota: Elaboración propia (2025). El encabezado muestra el logotipo institucional "miESPE", enlaces de navegación como "Home", "Categorías", "Materias" y "Secciones", una barra de búsqueda con el texto "Buscar..." y botones de acción para "Login" y "Sign up". Esta estructura permite una navegación clara y accesible dentro del portal.
 
 ---
