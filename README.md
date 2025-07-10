@@ -101,7 +101,7 @@ espe-nav-category {
 # Ejemplo visual
 Figura 4. Vista del Menú de Categorías con Imágenes y Cantidad de Productos
 
-![Captura uso de componente - categoria](docs/componente-en-uso-encebollado.png)
+![Captura uso de componente - categoria](docs/especategoria.png)
 Nota: Elaboración propia (2025). Las categorías se presentan como burbujas circulares con imágenes de fondo, etiquetas y cantidades de productos. Al pasar el cursor, se activa una superposición visual que mejora la interacción.
 
 ---
